@@ -40,4 +40,10 @@ public class FizzBuzzTest
             "lucky: 13\n" +
             "integer: 14", output.trim());
     }
+    
+    @Test
+    public void testFizzBuzzDoesNotContainIncorrectWords() throws Exception{
+        String output = tapSystemOut(() -> FizzBuzz.calcFizzBuzzWithLuckyAndCount(20));
+        assertNotEquals("This text does not match", output.trim());
+    }
 }
